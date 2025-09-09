@@ -1,11 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Green Earth - Plant Trees Save Future</title>
+
+    <!-- frameworks -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="./assets/hero-leaf1.png">
 </head>
-<body>
+
+<body class="bg-green-100">
+    <!-- top navigation -->
+    <header class="shadow-sm bg-green-700">
+        <div class="navbar container mx-auto">
+            <div class="navbar-start">
+                <a href="index.html" class="text-xl text-white font-bold">Green Earth</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="flex gap-4 menu-horizontal px-1 text-white">
+                    <li><a href="#about" class="cursor-pointer font-semibold">About</a></li>
+                    <li><a href="#impact" class="cursor-pointer font-semibold">Gallery</a></li>
+                    <li><a href="#donation" class="cursor-pointer font-semibold">Plant a Tree</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a href="#donation" class="btn btn-warning text-white rounded-full">Plant a Tree</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- hero banner -->
+    <main class="bg-green-100">
+        <div class="container mx-auto flex justify-between items-center py-10">
+            <figure>
+                <img src="./assets/hero-leaf1.png" alt="leaf decoration">
+            </figure>
+            <div class="text-center space-y-5">
+                <h1 class="text-4xl font-bold text-gray-800">Plant a Tree, Grow a Future</h1>
+                <p class="text-lg text-gray-600">
+                    Join our mission to plant 1 million trees and make the Earth greener
+                    for future generations.
+                </p>
+                <a href="#donation" class="btn btn-warning text-green-600 rounded-full">Get Involved</a>
+            </div>
+            <figure>
+                <img src="./assets/hero-leaf2.png" alt="leaf decoration">
+            </figure>
+        </div>
+    </main>
+
+    <!-- main content area -->
+    <section class="bg-green-50 py-20">
+        <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Choose Your Trees</h1>
+
+        <!-- loading animation -->
+        <div class="flex justify-center mb-8 hidden" id="loader">
+            <span class="loading loading-bars loading-xl text-green-600"></span>
+        </div>
+
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4">
+            <!-- sidebar categories -->
+            <div class="md:col-span-2">
+                <div class="sticky top-10">
+                    <h2 class="text-xl px-2 font-bold mt-2 text-gray-700">Categories</h2>
+                    <ul class="space-y-3 px-2 mt-10" id="category-container">
+                        <!-- categories will load here -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- main product grid -->
+            <div class="md:col-span-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4" id="post-container">
+                    <!-- plant cards will load here -->
+                </div>
+            </div>
+
+            <!-- cart sidebar -->
+            <div class="bg-white md:col-span-2 mt-2 p-3 rounded-lg shadow-sm">
+                <h3 class="font-bold text-gray-700">Your Cart</h3>
+                <div id="cart-container">
+                    <!-- cart items will show here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- about section -->
+        <section id="about" class="max-w-7xl mx-auto px-4 mt-16">
+            <h3 class="text-3xl font-bold text-center text-green-800 mb-8">About the Campaign</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <img class="rounded-lg shadow-lg mx-auto md:ml-48 w-64 md:w-72 h-auto" src="./assets/about.png"
+                    alt="Tree Planting Campaign">
+                <div class="space-y-4">
+                    <p class="text-lg text-gray-700">
+                        Green Earth is a global tree plantation initiative dedicated to fighting climate change.
+                        Since our start, we've planted over 500,000 trees worldwide. By joining our campaign, you help
+                        restore forests, create habitats for wildlife, and combat global warming.
+                    </p>
+                    <ul class="list-disc pl-6 text-lg text-gray-700 space-y-1">
+                        <li>Restoration of natural habitats</li>
+                        <li>Improvement of air quality</li>
+                        <li>Support for local communities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- product details modal -->
+    <input type="checkbox" id="treeModal" class="modal-toggle">
+    <div class="modal" role="dialog">
+        <div class="modal-box w-11/12 max-w-md">
+            <h3 id="modal-title" class="font-bold text-xl mb-3 text-gray-800"></h3>
+            <img id="modal-image" class="rounded-lg w-full h-48 object-cover mb-3" alt="plant image">
+            <div class="space-y-2 text-gray-700">
+                <p><strong>Category:</strong> <span id="modal-category"></span></p>
+                <p><strong>Price:</strong> ৳<span id="modal-price"></span></p>
+                <p><strong>Description:</strong> <span id="modal-description"></span></p>
+            </div>
+            <div class="modal-action">
+                <label for="treeModal" class="btn btn-sm">Close</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- impact stats -->
+    <section id="impact" class="bg-green-100 py-16 px-4">
+        <h3 class="text-3xl font-bold text-center text-green-800 mb-12">Our Impact</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
+                <p class="text-4xl font-bold text-green-700">500K+</p>
+                <p class="mt-2 text-gray-600">Trees Planted</p>
+            </div>
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
+                <p class="text-4xl font-bold text-green-700">120+</p>
+                <p class="mt-2 text-gray-600">Communities Involved</p>
+            </div>
+            <div
+                class="bg-white p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
+                <p class="text-4xl font-bold text-green-700">30+</p>
+                <p class="mt-2 text-gray-600">Countries Reached</p>
+            </div>
+        </div>
+    </section>
+
     
+
+    <!-- bottom footer -->
+    <footer class="bg-green-900 text-green-100 text-center py-6">
+        <p class="text-sm">&copy; 2025 Yeasin Arafat. All Rights Reserved.</p>
+    </footer>
+
+    <!-- main script -->
+    <script src="./script.js"></script>
 </body>
+
 </html>
