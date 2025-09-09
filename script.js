@@ -39,7 +39,7 @@ async function loadAllCategories() {
       categoryLi.id = result.categories[i].id;
       categoryLi.className =
         "hover:bg-green-700 hover:text-white rounded-lg cursor-pointer px-3 py-2 categoryItem";
-      categoryLi.innerText = result.categories[i].category_name;
+      categoryLi.innerText = result.categories[i].category_name+"s";
       categoryContainer.appendChild(categoryLi);
     }
   } catch (err) {
