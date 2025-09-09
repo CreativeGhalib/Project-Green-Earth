@@ -95,7 +95,7 @@ function displayPlants(plants) {
 
     plantCard.innerHTML = `
             <figure class="overflow-hidden rounded-xl">
-                <img class="w-full h-48 object-cover" src="${plant.image}" alt="${plant.name}" />
+                <img class="w-full h-32 sm:h-48 object-cover" src="${plant.image}" alt="${plant.name}" />
             </figure>
             <div class="card-body px-2 py-4 space-y-3">
                 <h2 class="text-lg font-semibold text-gray-800">${plant.name}</h2>
