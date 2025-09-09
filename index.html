@@ -26,9 +26,9 @@
 <body class="bg-green-100 font-['Inter']">
     <!-- top navigation -->
     <header class="shadow-sm bg-green-700">
-        <div class="navbar container mx-auto">
+        <div class="navbar container mx-auto px-4">
             <div class="navbar-start">
-                <a href="index.html" class="text-xl text-white font-bold">Green Earth</a>
+                <a href="index.html" class="text-lg sm:text-xl text-white font-bold">Green Earth</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="flex gap-4 menu-horizontal px-1 text-white">
@@ -38,60 +38,60 @@
                 </ul>
             </div>
             <div class="navbar-end">
-                <a href="#donation" class="btn btn-warning text-white rounded-full">Plant a Tree</a>
+                <a href="#donation" class="btn btn-warning bg-[#FACC15;] text-[#15803d] rounded-full text-sm sm:text-base px-3 sm:px-6">Plant a Tree</a>
             </div>
         </div>
     </header>
 
     <!-- hero banner -->
     <main class="bg-green-100">
-        <div class="container mx-auto flex justify-between items-center py-10">
-            <figure>
-                <img src="./assets/hero-leaf1.png" alt="leaf decoration">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center py-6 sm:py-10 px-4">
+            <figure class="hidden sm:block -mb-8">
+                <img src="./assets/hero-leaf1.png" alt="leaf decoration" class="w-16 sm:w-auto">
             </figure>
-            <div class="text-center space-y-5">
-                <h1 class="text-4xl font-bold text-gray-800">Plant a Tree, Grow a Future</h1>
-                <p class="text-lg text-gray-600">
+            <div class="text-center space-y-3 sm:space-y-5 max-w-md sm:max-w-none">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Plant a Tree, Grow a Future</h1>
+                <p class="text-sm sm:text-base md:text-lg text-gray-600 px-4 sm:px-0">
                     Join our mission to plant 1 million trees and make the Earth greener
                     for future generations.
                 </p>
-                <a href="#donation" class="btn btn-warning text-green-600 rounded-full">Get Involved</a>
+                <a href="#donation" class="btn btn-warning bg-[#FACC15] text-green-600 rounded-full text-sm sm:text-base">Get Involved</a>
             </div>
-            <figure>
-                <img src="./assets/hero-leaf2.png" alt="leaf decoration">
+            <figure class="hidden sm:block -mb-8">
+                <img src="./assets/hero-leaf2.png" alt="leaf decoration" class="w-16 sm:w-auto">
             </figure>
         </div>
     </main>
 
     <!-- main content area -->
-    <section class="bg-green-50 py-20">
-        <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Choose Your Trees</h1>
+    <section class="bg-green-50 py-10 sm:py-20">
+        <h1 class="text-2xl sm:text-3xl font-bold text-center mb-6 text-gray-800 px-4">Choose Your Trees</h1>
 
         <!-- loading animation -->
         <div class="flex justify-center mb-8 hidden" id="loader">
             <span class="loading loading-bars loading-xl text-green-600"></span>
         </div>
 
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 px-4">
             <!-- sidebar categories -->
-            <div class="md:col-span-2">
-                <div class="sticky top-10">
-                    <h2 class="text-xl px-2 font-bold mt-2 text-gray-700">Categories</h2>
-                    <ul class="space-y-3 px-2 mt-10" id="category-container">
+            <div class="lg:col-span-2 order-2 lg:order-1">
+                <div class="lg:sticky lg:top-10">
+                    <h2 class="text-lg sm:text-xl px-2 font-bold mt-2 text-gray-700">Categories</h2>
+                    <ul class="space-y-3 px-2 mt-6 sm:mt-10" id="category-container">
                         <!-- categories will load here -->
                     </ul>
                 </div>
             </div>
 
             <!-- main product grid -->
-            <div class="md:col-span-8">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-2 gap-4" id="post-container">
+            <div class="lg:col-span-8 order-1 lg:order-2">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-2 gap-4" id="post-container">
                     <!-- plant cards will load here -->
                 </div>
             </div>
 
             <!-- cart sidebar -->
-            <div class="bg-white md:col-span-2 mt-2 p-3 rounded-lg shadow-sm">
+            <div class="bg-white lg:col-span-2 mt-2 p-3 rounded-lg shadow-sm order-3">
                 <h3 class="font-bold text-gray-700">Your Cart</h3>
                 <div id="cart-container">
                     <!-- cart items will show here -->
@@ -100,18 +100,18 @@
         </div>
 
         <!-- about section -->
-        <section id="about" class="max-w-7xl mx-auto px-4 mt-16">
-            <h3 class="text-3xl font-bold text-center text-green-800 mb-8">About the Campaign</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <img class="rounded-lg shadow-lg mx-auto md:ml-48 w-64 md:w-72 h-auto" src="./assets/about.png"
+        <section id="about" class="max-w-7xl mx-auto px-4 mt-10 sm:mt-16">
+            <h3 class="text-2xl sm:text-3xl font-bold text-center text-green-800 mb-6 sm:mb-8">About the Campaign</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+                <img class="rounded-lg shadow-lg mx-auto w-64 sm:w-72 md:ml-48 h-auto" src="./assets/about.png"
                     alt="Tree Planting Campaign">
-                <div class="space-y-4">
-                    <p class="text-lg text-gray-700">
+                <div class="space-y-3 sm:space-y-4">
+                    <p class="text-base sm:text-lg text-gray-700">
                         Green Earth is a global tree plantation initiative dedicated to fighting climate change.
                         Since our start, we've planted over 500,000 trees worldwide. By joining our campaign, you help
                         restore forests, create habitats for wildlife, and combat global warming.
                     </p>
-                    <ul class="list-disc pl-6 text-lg text-gray-700 space-y-1">
+                    <ul class="list-disc pl-6 text-base sm:text-lg text-gray-700 space-y-1">
                         <li>Restoration of natural habitats</li>
                         <li>Improvement of air quality</li>
                         <li>Support for local communities</li>
@@ -124,10 +124,10 @@
     <!-- product details modal -->
     <input type="checkbox" id="treeModal" class="modal-toggle">
     <div class="modal" role="dialog">
-        <div class="modal-box w-11/12 max-w-md">
-            <h3 id="modal-title" class="font-bold text-xl mb-3 text-gray-800"></h3>
+        <div class="modal-box w-11/12 max-w-md mx-4">
+            <h3 id="modal-title" class="font-bold text-lg sm:text-xl mb-3 text-gray-800"></h3>
             <img id="modal-image" class="rounded-lg w-full h-48 object-cover mb-3" alt="plant image">
-            <div class="space-y-2 text-gray-700">
+            <div class="space-y-2 text-gray-700 text-sm sm:text-base">
                 <p><strong>Category:</strong> <span id="modal-category"></span></p>
                 <p><strong>Price:</strong> ৳<span id="modal-price"></span></p>
                 <p><strong>Description:</strong> <span id="modal-description"></span></p>
@@ -139,50 +139,48 @@
     </div>
 
     <!-- impact stats -->
-    <section id="impact" class="bg-green-100 py-16 px-4">
-        <h3 class="text-3xl font-bold text-center text-green-800 mb-12">Our Impact</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
-                <p class="text-4xl font-bold text-green-700">500K+</p>
-                <p class="mt-2 text-gray-600">Trees Planted</p>
+    <section id="impact" class="bg-green-100 py-10 sm:py-16 px-4">
+        <h3 class="text-2xl sm:text-3xl font-bold text-center text-green-800 mb-8 sm:mb-12">Our Impact</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto text-center">
+            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
+                <p class="text-3xl sm:text-4xl font-bold text-green-700">500K+</p>
+                <p class="mt-2 text-gray-600 text-sm sm:text-base">Trees Planted</p>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
-                <p class="text-4xl font-bold text-green-700">120+</p>
-                <p class="mt-2 text-gray-600">Communities Involved</p>
+            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
+                <p class="text-3xl sm:text-4xl font-bold text-green-700">120+</p>
+                <p class="mt-2 text-gray-600 text-sm sm:text-base">Communities Involved</p>
             </div>
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
-                <p class="text-4xl font-bold text-green-700">30+</p>
-                <p class="mt-2 text-gray-600">Countries Reached</p>
+            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:bg-green-200 hover:scale-105 transition-all duration-300">
+                <p class="text-3xl sm:text-4xl font-bold text-green-700">30+</p>
+                <p class="mt-2 text-gray-600 text-sm sm:text-base">Countries Reached</p>
             </div>
         </div>
     </section>
-    
+
     <!-- donation form -->
-    <section id="donation" class="bg-green-800 text-white py-16 px-4">
-        <h3 class="text-3xl font-bold text-center mb-8">Plant a Tree Today</h3>
-        <form id="donationForm" class="max-w-lg mx-auto bg-green-700 p-8 rounded-xl shadow-lg space-y-4">
-            <input type="text" name="userName" placeholder="Your Name" class="w-full p-3 rounded bg-white text-gray-800"
+    <section id="donation" class="bg-green-800 text-white py-10 sm:py-16 px-4">
+        <h3 class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8">Plant a Tree Today</h3>
+        <form id="donationForm" class="max-w-lg mx-auto bg-green-700 p-6 sm:p-8 rounded-xl shadow-lg space-y-4">
+            <input type="text" name="userName" placeholder="Your Name" class="w-full p-3 rounded bg-white text-gray-800 text-sm sm:text-base"
                 required>
-            <input type="email" name="userEmail" placeholder="Your Email" class="w-full p-3 rounded bg-white text-gray-800"
+            <input type="email" name="userEmail" placeholder="Your Email" class="w-full p-3 rounded bg-white text-gray-800 text-sm sm:text-base"
                 required>
-            <select name="treePackage" class="w-full p-3 rounded bg-white text-gray-800" required>
+            <select name="treePackage" class="w-full p-3 rounded bg-white text-gray-800 text-sm sm:text-base" required>
                 <option value="">Number of Trees</option>
                 <option value="1">1 Tree - $5</option>
                 <option value="5">5 Trees - $25</option>
                 <option value="10">10 Trees - $50</option>
             </select>
             <button type="submit"
-                class="bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold px-6 py-3 rounded-full w-full transition-colors">
+                class="bg-[#FACC15] hover:bg-yellow-500 text-green-900 font-bold px-6 py-3 rounded-full w-full transition-colors text-sm sm:text-base">
                 Donate Now
             </button>
         </form>
     </section>
 
-
-
     <!-- bottom footer -->
-    <footer class="bg-green-900 text-green-100 text-center py-6">
-        <p class="text-sm">&copy; 2025 Yeasin Arafat. All Rights Reserved.</p>
+    <footer class="bg-green-900 text-green-100 text-center py-4 sm:py-6">
+        <p class="text-xs sm:text-sm">&copy; 2025 Yeasin Arafat. All Rights Reserved.</p>
     </footer>
 
     <!-- main script -->
